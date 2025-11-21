@@ -11,13 +11,13 @@ O objetivo deste teste técnico é avaliar suas habilidades no desenvolvimento d
 - Implementar uma tela onde o usuário poderá visualizar uma **lista de informações** sobre **transactions** e **schedules**.
 - Implementar um **BottomSheet** que permitirá ocultar ou exibir dados sobre os itens do **schedule**.
 - Seguir as diretrizes do **protótipo no Figma**.
-- Escrever **testes unitários** e **testes de widget**.
 - Utilizar o BLoC como gerenciamento de estado.
 - Comportamentos esperados para a tela:
   - Em estado de loading os widgets devem exibir um shimmer no lugar dos dados;
   - A tela deve ter um scroll único de forma geral, não sendo permitido a existência de scrolls aninhados;
   - A tela deve suportar o gesto 'puxar para atualizar' (pull-to-refresh). Ao realizar esse gesto, os dados exibidos na tela devem ser recarregados, buscando as informações mais recentes do servidor.
   - A interface da tela deve se adaptar automaticamente aos campos de filtro retornados pela API. Alterações nos campos de filtro na API devem refletir imediatamente no app, sem necessidade da publicação de uma nova release.
+- Será validado **principalmente** a UI para **smartphone**, a versão **web** também poderá ser apresentada
 
 ## Boas Práticas
 Para garantir um código bem estruturado e manutenível, siga as seguintes diretrizes:
@@ -30,7 +30,7 @@ Para garantir um código bem estruturado e manutenível, siga as seguintes diret
 - **Seguir a Arquitetura do Projeto:** Mantenha o código organizado e dentro da estrutura já existente no projeto base.
 
 ## Testes
-- É **obrigatório** implementar **testes unitários** para as regras de negócio, validações e/ou camadas que julgar necessário.
+- É **Opcional** implementar **testes unitários** para as regras de negócio, validações e/ou camadas que julgar necessário, mas é muito valioso para nós!.
 - **Opcional:** Implementação de **testes de integração** para garantir a funcionalidade correta da interface e interação do usuário.
 
 ## Entrega
