@@ -33,10 +33,13 @@ Para garantir um código bem estruturado e manutenível, siga as seguintes diret
 - É **Opcional** implementar **testes unitários** para as regras de negócio, validações e/ou camadas que julgar necessário, mas é muito valioso para nós!.
 - **Opcional:** Implementação de **testes de integração** para garantir a funcionalidade correta da interface e interação do usuário.
 
-## Entrega
+## ⚠ Entrega
 1. Faça um fork ou clone do repositório base fornecido.
-2. Desenvolva as funcionalidades seguindo os requisitos.
-3. Submeta o código em um repositório público ou envie um link para o repositório privado.
+2. Crie uma branch com seu nome (feature/matheus-nunes)
+3. Desenvolva as funcionalidades seguindo os requisitos.
+4. Abra um Pull Request para este repositório original
+  ## Outras formas de entregar
+ - Submeta o código em um repositório público ou envie um link para o repositório privado.
 
 Boa sorte! 🚀
 
