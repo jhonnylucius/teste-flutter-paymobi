@@ -79,4 +79,8 @@ Boa sorte! 🚀
   test/                                  # Testes unitários
   ```
 
-  ![DOCUMENTAÇÃO](DOCS/DOCUMENTACAO_COMPLETA.md)
+## 📄 Documentação Completa
+
+Para detalhes sobre todas as implementações, correções e melhorias realizadas, acesse:
+
+**[📋 DOCUMENTAÇÃO COMPLETA](DOCS/DOCUMENTACAO_COMPLETA.md)**
