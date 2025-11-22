@@ -20,29 +20,29 @@ class SummaryCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Flexible(
-              child: Text(
-                LocalizationHelper.translateSummaryLabel(
-                  context,
-                  summary.label,
-                ).toUpperCase(),
-                style: AppTextStyles.cardTitle.copyWith(
-                  fontSize: 11,
-                  height: 1.3,
-                ),
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
+            Text(
+              LocalizationHelper.translateSummaryLabel(
+                context,
+                summary.label,
+              ).toUpperCase(),
+              style: AppTextStyles.cardTitle.copyWith(
+                fontSize: 11,
+                height: 1.3,
+                color: AppColors.textSecondary,
               ),
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
             ),
-            const SizedBox(height: AppSpacing.xs),
+            const SizedBox(height: AppSpacing.sm),
             FittedBox(
               fit: BoxFit.scaleDown,
               alignment: Alignment.centerLeft,
               child: Text(
                 _formatCurrency(summary.value),
                 style: AppTextStyles.cardValue.copyWith(
-                  fontSize: 18,
+                  fontSize: 20,
                   fontWeight: FontWeight.bold,
+                  color: AppColors.textPrimary,
                 ),
               ),
             ),
