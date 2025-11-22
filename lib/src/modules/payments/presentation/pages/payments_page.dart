@@ -153,7 +153,7 @@ class _SummarySection extends StatelessWidget {
         physics: const NeverScrollableScrollPhysics(),
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
-          childAspectRatio: 2.5,
+          childAspectRatio: 1.8,
           crossAxisSpacing: AppSpacing.md,
           mainAxisSpacing: AppSpacing.md,
         ),

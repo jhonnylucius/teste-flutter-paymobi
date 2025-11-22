@@ -13,15 +13,11 @@ class SummaryCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       elevation: 1,
-      child: Container(
-        constraints: const BoxConstraints(minHeight: 130),
-        padding: const EdgeInsets.symmetric(
-          horizontal: AppSpacing.md,
-          vertical: AppSpacing.md,
-        ),
+      child: Padding(
+        padding: const EdgeInsets.all(AppSpacing.md),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
               LocalizationHelper.translateSummaryLabel(
@@ -37,20 +33,16 @@ class SummaryCard extends StatelessWidget {
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
             ),
-            const SizedBox(height: AppSpacing.sm),
-            Flexible(
-              child: FittedBox(
-                fit: BoxFit.scaleDown,
-                alignment: Alignment.centerLeft,
-                child: Text(
-                  _formatCurrency(summary.value),
-                  style: AppTextStyles.cardValue.copyWith(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                    color: AppColors.textPrimary,
-                  ),
-                ),
+            const SizedBox(height: AppSpacing.xs),
+            Text(
+              _formatCurrency(summary.value),
+              style: AppTextStyles.cardValue.copyWith(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: AppColors.textPrimary,
               ),
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
             ),
           ],
         ),
