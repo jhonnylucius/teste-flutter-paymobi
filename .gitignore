@@ -51,3 +51,4 @@ app.*.map.json
 .fvm/fvm_config.json
 .fvm/version
 .fvm/release
+.dart_tool/package_config_subset
