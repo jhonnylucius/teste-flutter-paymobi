@@ -6,25 +6,31 @@ class PaymentsInfoModel extends PaymentsInfoEntity {
     : super(
         paymentsScheduled:
             json['paymentsScheduled'] != null
-                ? json['paymentsScheduled']
-                    .map<PaymentsScheduledEntity>((json) => PaymentsScheduledModel.fromJson(json))
+                ? ((json['paymentsScheduled'] as List)
+                    .map((json) => PaymentsScheduledModel.fromJson(json))
                     .toList()
+                  ..sort((a, b) => a.paymentDate.compareTo(b.paymentDate)))
                 : [],
         transactionFilter:
-            json['transactionFilters'] != null
-                ? json['transactionFilters']
-                    .map<PaymentsTransactionFilterEntity>((json) => PaymentsTransactionHeadersModel.fromJson(json))
+            json['transactionFilter'] != null
+                ? (json['transactionFilter'] as List)
+                    .map(
+                      (json) => PaymentsTransactionHeadersModel.fromJson(json),
+                    )
                     .toList()
                 : [],
         transactions:
             json['transactions'] != null
-                ? json['transactions']
-                    .map<PaymentsTransactionsEntity>((json) => PaymentsTransactionsModel.fromJson(json))
+                ? ((json['transactions'] as List)
+                    .map((json) => PaymentsTransactionsModel.fromJson(json))
                     .toList()
+                  ..sort((a, b) => b.processDate.compareTo(a.processDate)))
                 : [],
         summary:
             json['summary'] != null
-                ? json['summary'].map<PaymentsSummaryEntity>((json) => PaymentsSummaryModel.fromJson(json)).toList()
+                ? (json['summary'] as List)
+                    .map((json) => PaymentsSummaryModel.fromJson(json))
+                    .toList()
                 : [],
       );
   PaymentsInfoModel.empty() : this.fromJson({});
