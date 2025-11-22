@@ -17,14 +17,24 @@ class PaymentsTransactionsModel extends PaymentsTransactionsEntity {
 
   factory PaymentsTransactionsModel.fromJson(Map<String, dynamic> map) {
     return PaymentsTransactionsModel(
-      key: map['key'] ?? "",
+      key: (map['paymentId'] ?? map['key'] ?? '').toString(),
       actualPaymentPostDate: DateTime.parse(map['actualPaymentPostDate']),
       processDate: DateTime.parse(map['processDate']),
-      actualPaymentAmount: ConverterHelper.dynamicToDouble(map['actualPaymentAmount'] ?? 0.0),
-      actualPrincipalPaymentAmount: ConverterHelper.dynamicToDouble(map['actualPrincipalPaymentAmount'] ?? 0.0),
-      actualInterestPaymentAmount: ConverterHelper.dynamicToDouble(map['actualInterestPaymentAmount'] ?? 0.0),
-      outstandingPrincipalBalance: ConverterHelper.dynamicToDouble(map['outstandingPrincipalBalance'] ?? 0.0),
-      outstandingLoanBalance: ConverterHelper.dynamicToDouble(map['outstandingLoanBalance'] ?? 0.0),
+      actualPaymentAmount: ConverterHelper.dynamicToDouble(
+        map['actualPaymentAmount'] ?? 0.0,
+      ),
+      actualPrincipalPaymentAmount: ConverterHelper.dynamicToDouble(
+        map['actualPrincipalPaymentAmount'] ?? 0.0,
+      ),
+      actualInterestPaymentAmount: ConverterHelper.dynamicToDouble(
+        map['actualInterestPaymentAmount'] ?? 0.0,
+      ),
+      outstandingPrincipalBalance: ConverterHelper.dynamicToDouble(
+        map['outstandingPrincipalBalance'] ?? 0.0,
+      ),
+      outstandingLoanBalance: ConverterHelper.dynamicToDouble(
+        map['outstandingLoanBalance'] ?? 0.0,
+      ),
       actualFee: ConverterHelper.dynamicToDouble(map['actualFee'] ?? 0.0),
       paymentType: map['paymentType'] ?? "",
     );
@@ -34,13 +44,32 @@ class PaymentsTransactionsModel extends PaymentsTransactionsEntity {
   Map<String, dynamic> toMap() {
     return {
       'key': key,
-      'actualPaymentPostDate': ConverterHelper.stringNullableToMMDDYYYY(actualPaymentPostDate.toIso8601String()),
-      'processDate': ConverterHelper.stringNullableToMMDDYYYY(processDate.toIso8601String()),
-      'actualPaymentAmount': ConverterHelper.currencyFormatter(actualPaymentAmount, "--"),
-      'actualPrincipalPaymentAmount': ConverterHelper.currencyFormatter(actualPrincipalPaymentAmount, "--"),
-      'actualInterestPaymentAmount': ConverterHelper.currencyFormatter(actualInterestPaymentAmount, "--"),
-      'outstandingPrincipalBalance': ConverterHelper.currencyFormatter(outstandingPrincipalBalance, "--"),
-      'outstandingLoanBalance': ConverterHelper.currencyFormatter(outstandingLoanBalance, "--"),
+      'actualPaymentPostDate': ConverterHelper.stringNullableToMMDDYYYY(
+        actualPaymentPostDate.toIso8601String(),
+      ),
+      'processDate': ConverterHelper.stringNullableToMMDDYYYY(
+        processDate.toIso8601String(),
+      ),
+      'actualPaymentAmount': ConverterHelper.currencyFormatter(
+        actualPaymentAmount,
+        "--",
+      ),
+      'actualPrincipalPaymentAmount': ConverterHelper.currencyFormatter(
+        actualPrincipalPaymentAmount,
+        "--",
+      ),
+      'actualInterestPaymentAmount': ConverterHelper.currencyFormatter(
+        actualInterestPaymentAmount,
+        "--",
+      ),
+      'outstandingPrincipalBalance': ConverterHelper.currencyFormatter(
+        outstandingPrincipalBalance,
+        "--",
+      ),
+      'outstandingLoanBalance': ConverterHelper.currencyFormatter(
+        outstandingLoanBalance,
+        "--",
+      ),
       'actualFee': ConverterHelper.currencyFormatter(actualFee, "--"),
       'type': paymentType,
     };
