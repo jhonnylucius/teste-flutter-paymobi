@@ -178,7 +178,10 @@ void main() {
 
         // Assert
         result.fold((_) => fail('Should return success'), (paymentsInfo) {
-          expect(paymentsInfo.summary.length, 1);
+          expect(
+            paymentsInfo.summary.length,
+            4,
+          ); // Outstanding Balance, Total Paid, Principal Paid, Interest Paid
           expect(paymentsInfo.transactionFilter.length, 1);
           expect(paymentsInfo.transactions.length, 1);
         });

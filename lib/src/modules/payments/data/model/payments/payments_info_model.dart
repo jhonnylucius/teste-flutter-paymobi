@@ -34,4 +34,17 @@ class PaymentsInfoModel extends PaymentsInfoEntity {
                 : [],
       );
   PaymentsInfoModel.empty() : this.fromJson({});
+
+  /// Construtor para criar PaymentsInfoModel com valores calculados
+  PaymentsInfoModel.fromCalculated({
+    required List<PaymentsScheduledEntity> paymentsScheduled,
+    required List<PaymentsSummaryEntity> summary,
+    required List<PaymentsTransactionFilterEntity> transactionFilter,
+    required List<PaymentsTransactionsEntity> transactions,
+  }) : super(
+         paymentsScheduled: paymentsScheduled,
+         summary: summary,
+         transactionFilter: transactionFilter,
+         transactions: transactions,
+       );
 }
