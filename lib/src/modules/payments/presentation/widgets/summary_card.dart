@@ -14,11 +14,14 @@ class SummaryCard extends StatelessWidget {
     return Card(
       elevation: 1,
       child: Container(
-        constraints: const BoxConstraints(minHeight: 110),
-        padding: const EdgeInsets.all(AppSpacing.md),
+        constraints: const BoxConstraints(minHeight: 130),
+        padding: const EdgeInsets.symmetric(
+          horizontal: AppSpacing.md,
+          vertical: AppSpacing.md,
+        ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
               LocalizationHelper.translateSummaryLabel(
@@ -26,23 +29,26 @@ class SummaryCard extends StatelessWidget {
                 summary.label,
               ).toUpperCase(),
               style: AppTextStyles.cardTitle.copyWith(
-                fontSize: 11,
+                fontSize: 10,
                 height: 1.3,
                 color: AppColors.textSecondary,
+                fontWeight: FontWeight.w600,
               ),
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
             ),
             const SizedBox(height: AppSpacing.sm),
-            FittedBox(
-              fit: BoxFit.scaleDown,
-              alignment: Alignment.centerLeft,
-              child: Text(
-                _formatCurrency(summary.value),
-                style: AppTextStyles.cardValue.copyWith(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                  color: AppColors.textPrimary,
+            Flexible(
+              child: FittedBox(
+                fit: BoxFit.scaleDown,
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  _formatCurrency(summary.value),
+                  style: AppTextStyles.cardValue.copyWith(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: AppColors.textPrimary,
+                  ),
                 ),
               ),
             ),
