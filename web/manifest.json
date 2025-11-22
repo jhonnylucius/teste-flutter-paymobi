@@ -1,11 +1,11 @@
 {
-    "name": "base_project",
-    "short_name": "base_project",
+    "name": "PayMobi - Teste Luciano",
+    "short_name": "PayMobi",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#0175C2",
-    "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "background_color": "#232F69",
+    "theme_color": "#232F69",
+    "description": "App de pagamentos PayMobi - Teste técnico Luciano",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
