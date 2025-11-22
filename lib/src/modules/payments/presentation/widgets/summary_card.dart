@@ -14,8 +14,8 @@ class SummaryCard extends StatelessWidget {
     return Card(
       elevation: 1,
       child: Container(
-        constraints: const BoxConstraints(minHeight: 90),
-        padding: const EdgeInsets.all(AppSpacing.sm),
+        constraints: const BoxConstraints(minHeight: 110),
+        padding: const EdgeInsets.all(AppSpacing.md),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.center,
@@ -27,8 +27,8 @@ class SummaryCard extends StatelessWidget {
                   summary.label,
                 ).toUpperCase(),
                 style: AppTextStyles.cardTitle.copyWith(
-                  fontSize: 10,
-                  height: 1.2,
+                  fontSize: 11,
+                  height: 1.3,
                 ),
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
