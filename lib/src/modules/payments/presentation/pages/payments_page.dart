@@ -370,6 +370,12 @@ class _ScheduleTab extends StatelessWidget {
                       );
                     }, childCount: schedules.length),
                   ),
+                  // Padding generoso no final para edge-to-edge
+                  SliverPadding(
+                    padding: EdgeInsets.only(
+                      bottom: MediaQuery.of(context).padding.bottom + 80,
+                    ),
+                  ),
                 ],
               ),
     );
@@ -452,6 +458,12 @@ class _TransactionsTab extends StatelessWidget {
                 );
               }, childCount: transactions.length),
             ),
+          // Padding generoso no final para edge-to-edge
+          SliverPadding(
+            padding: EdgeInsets.only(
+              bottom: MediaQuery.of(context).padding.bottom + 80,
+            ),
+          ),
         ],
       ),
     );
