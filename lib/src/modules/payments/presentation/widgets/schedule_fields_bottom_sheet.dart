@@ -148,8 +148,10 @@ class ScheduleFieldsBottomSheet extends StatelessWidget {
                 ),
               ),
 
-              // Bottom safe area
-              SizedBox(height: MediaQuery.of(context).padding.bottom),
+              // Bottom safe area com padding generoso para edge-to-edge
+              SizedBox(
+                height: MediaQuery.of(context).padding.bottom + AppSpacing.xl,
+              ),
             ],
           ),
         );
