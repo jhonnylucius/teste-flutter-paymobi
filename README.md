@@ -78,3 +78,5 @@ Boa sorte! 🚀
       ├── main.dart                      # Ponto de entrada do app
   test/                                  # Testes unitários
   ```
+
+  ![DOCUMENTAÇÃO](DOCS/DOCUMENTACAO_COMPLETA.md)
