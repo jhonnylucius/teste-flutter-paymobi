@@ -47,6 +47,9 @@ class _SplashPageState extends State<SplashPage> {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final logoSize = screenWidth * 0.4; // 40% da largura da tela
+
     return Scaffold(
       backgroundColor: AppColors.primaryDark,
       body: Center(
@@ -61,7 +64,7 @@ class _SplashPageState extends State<SplashPage> {
                 duration: const Duration(milliseconds: 1500),
                 minScale: 0.98,
                 maxScale: 1.02,
-                child: const PayMobiLogo(height: 100),
+                child: PayMobiLogo(height: logoSize.clamp(80, 150)),
               ),
             ),
 
