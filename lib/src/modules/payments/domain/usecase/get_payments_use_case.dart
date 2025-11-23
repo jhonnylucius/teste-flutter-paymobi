@@ -60,10 +60,10 @@ class GetPaymentsUseCase implements UseCase<PaymentsInfoEntity, NoParams> {
       (sum, t) => sum + t.actualInterestPaymentAmount,
     );
 
-    // Outstanding Balance: pega o último saldo registrado
+    // Outstanding Balance: pega o saldo mais recente (primeira transação, pois está ordenada desc)
     final outstandingBalance =
         transactions.isNotEmpty
-            ? transactions.last.outstandingLoanBalance
+            ? transactions.first.outstandingLoanBalance
             : 0.0;
 
     return [
